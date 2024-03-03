@@ -54,6 +54,12 @@ repos:
         language: system
   - repo: local
     hooks:
+      - id: cargo-test
+        name: cargo test
+        entry: cargo
+        args: ["test", "--all-features", "--all-targets", "--workspace"]
+        language: system
+        types: [rust]
       - id: commit-msg-length
         name: commit-msg-length
         stages: [commit-msg]
